@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  oracle-xe:
+    image: gvenzl/oracle-xe
+    container_name: oracle-xe
+    ports:
+      - "15211:1521"      # Oracle DB port forwardolása
+    environment:
+      - ORACLE_PASSWORD=PASS  # Állítsd be az admin felhasználó jelszavát
+    volumes:
+      - oracle_data:/opt/oracle/oradata  # Az adatbázis perzisztens adataihoz
+
+volumes:
+  oracle_data:

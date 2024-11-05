@@ -1,0 +1,17 @@
+DB:
+LOGIN SYSTEM
+CREATE USER GDP3 IDENTIFIED BY PASS;
+GRANT CONNECT, RESOURCE TO GDP3;
+ALTER USER GDP3 QUOTA UNLIMITED ON USERS;
+
+LOGIN GDP3
+
+create table MY_ENTITY
+(
+    ID   INTEGER
+        constraint ID
+            primary key,
+    NAME VARCHAR2(100)
+);
+
+create sequence MY_ENTITY_SEQ order;
